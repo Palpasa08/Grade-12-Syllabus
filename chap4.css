@@ -1,0 +1,70 @@
+/* dbms.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f8fc;
+  color: #2b2b2b;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+
+h1, h2, h3 {
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+nav.navbar {
+  background-color: #1b2a47;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+nav.navbar a:hover {
+  background-color: #0059b3;
+}
+
+ul {
+  margin: 10px 0 20px 20px;
+}
+
+p {
+  margin: 10px 20px;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+h1 {
+  text-align: center;
+  background-color: #6497B1;
+  padding: 20px 0;
+  border-bottom: 2px solid #004080;
+  text-size-adjust: 20;
+}
+
+h2 {
+  background-color: #6c91c7;
+  padding: 10px;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  padding-left: 15px;
+}
+
+h3 {
+  margin: 15px 20px 5px;
+  color: #0059b3;
+}

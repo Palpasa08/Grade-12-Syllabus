@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 12 - DBMS Notes</title>
+  <link rel="stylesheet" href="dbms.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#data">Data</a>
+    <a href="#features">Features</a>
+    <a href="#database">Database</a>
+    <a href="#terminologies">Terminologies</a>
+    <a href="#dictionary">Data Dictionary</a>
+    <a href="#dbms">DBMS</a>
+    <a href="#models">Models</a>
+    <a href="#constraints">Constraints</a>
+    <a href="#normalization">Normalization</a>
+    <a href="#centralized">Centralized vs Distributed</a>
+    <a href="#security">Security</a>
+    <a href="#dba">DBA</a>
+  </nav>
+
+  <h1> Database Management System</h1>
+
+  <h2 id="data">Data and Information</h2>
+  <p><strong>Data:</strong> Data are the collection of raw facts and figure which are unorganized, uninterpreted, and isolated, which doesn’t give any particular sense. They are randomly gathered. So that they can be processed to obtain the desired result.</p>
+  <p><strong>Information:</strong> Information are the processed form of data. Information gives a meaning full result after data are interpreted. </p>
+  <p>For example,Think of data as the ingredients, and information as the finished meal prepared using those ingredients.Data doesn't depend on information. Information depends on data. Raw data alone is insufficient for decision making.</p>
+
+  <h2 id="features"> Features of Good Information</h2>
+  <ul>
+  <li><strong>Accuracy:</strong> Information must be correct and free from errors. It should accurately reflect the underlying data and be free from bias.</li>
+  <li><strong>Relevance:</strong> Information must be pertinent to the specific context and needs of the user. It should be appropriate for the situation and help users make informed decisions.</li>
+  <li><strong>Reliability:</strong> Information should be dependable and trustworthy. It should be sourced from credible providers and be consistent with other reliable information.</li>
+  <li><strong>Understandability:</strong> Information should be presented in a clear and concise manner, easy for the intended audience to comprehend.</li>
+  <li><strong>Conciseness:</strong> Information should be presented in a brief and to-the-point manner, avoiding unnecessary details or jargon.</li>
+  <li><strong>Accessibility:</strong> Information should be easily accessible to those who need it.</li>
+  <li><strong>Consistency:</strong> Information should be consistent with other relevant information and should not contradict itself.</li>
+</ul>
+
+  <h2 id="database"> Database </h2>
+  <p>A database is an organized collection of data stored electronically, designed for efficient storage, retrieval, and management. Key features include organized data storage, efficient access, security, and scalability. Databases also enable data integrity, multi-user access, and data recovery capabilities.It provides a structured way to manage and access data, enabling multiple users to query and interact with it simultaneously using complex logic and language. Databases are crucial for various applications, from managing customer information to tracking inventory, and are often managed by database management systems (DBMS).  </p>
+     <h2>Purposes of Database</h2>
+  <ul>
+  <li><strong>Centralized Repository:</strong> Databases act as a central location for storing data, making it easier to manage and access information.</li>
+  <li><strong>Structured Format:</strong> Data is organized in a structured format, typically using tables with rows and columns, allowing for efficient storage and retrieval.</li>
+  <li><strong>Elimination of Redundancy:</strong> Databases can minimize data redundancy, ensuring data consistency and reducing storage space.</li>
+  <li><strong>Fast Access:</strong> Databases are designed for rapid data retrieval, allowing users to quickly access specific information.</li>
+  <li><strong>Data Manipulation:</strong> Database management systems (DBMS) provide tools for users to easily update, insert, and delete data.</li>
+  <li><strong>Complex Queries:</strong> Databases can handle complex queries, allowing users to extract specific information based on various criteria.</li>
+  <li><strong>Wide Range of Applications:</strong> Databases are used in diverse settings, including business, scientific, and government organizations, to support various applications.</li>
+  <li><strong>Internal Operations:</strong> They support internal operations by managing information related to employees, customers, products, and more.</li>
+  <li><strong>External Interactions:</strong> Databases underpin online interactions, such as e-commerce transactions, social media platforms, and more.</li>
+  <li><strong>Data Integrity:</strong> Databases ensure data accuracy, consistency, and reliability, which is crucial for informed decision-making.</li>
+  <li><strong>Security Measures:</strong> DBMS provide security features to protect data from unauthorized access, modification, or deletion.</li>
+  <li><strong>Scalability:</strong> Databases can handle increasing volumes of data as an organization grows.</li>
+  <li><strong>Flexibility:</strong> They can be adapted to various data types and structures, making them suitable for diverse applications.</li>
+</ul>
+
+  <h2 id="terminologies">4. Terminologies in Database</h2>
+<p>Database terminology encompasses a wide range of terms related to the structure, management, and manipulation of data within a database system. Key concepts include tables, rows, columns, primary keys, foreign keys, data types, queries, and database management systems (DBMS). </p>
+
+<h3>Fundamental Concepts:</h3>
+<ul>
+  <li><strong>Database:</strong> A structured set of data held in a computer, designed for efficient storage, retrieval, and management of information.</li>
+  <li><strong>Table:</strong> A collection of related data organized in rows and columns, resembling a spreadsheet.</li>
+  <li><strong>Row (or Tuple):</strong> A single record within a table, representing a complete set of information for a specific entity.</li>
+  <li><strong>Column (or Field or Attribute):</strong> A vertical section of a table that contains specific types of data for each row, like customer names or product IDs.</li>
+  <li><strong>Primary Key:</strong> A unique identifier for each row in a table, ensuring no two rows have the same value in that column.</li>
+  <li><strong>Foreign Key:</strong> A column in one table that refers to the primary key of another table, establishing a link or relationship between the two tables.</li>
+  <li><strong>Data Type:</strong> Defines the kind of data a column can hold (e.g., text, numbers, dates).</li>
+  <li><strong>DBMS (Database Management System):</strong> Software that allows users to create, access, and manage databases.</li>
+</ul>
+
+<h3>Data Manipulation and Retrieval:</h3>
+<ul>
+  <li><strong>Query:</strong> A request for data from a database, often using SQL (Structured Query Language).</li>
+  <li><strong>SQL (Structured Query Language):</strong> A standard language for interacting with relational databases, used for querying, updating, and managing data.</li>
+  <li><strong>DML (Data Manipulation Language):</strong> A subset of SQL used for manipulating data within a database (e.g., inserting, updating, deleting).</li>
+  <li><strong>DDL (Data Definition Language):</strong> A subset of SQL used for defining the structure of the database (e.g., creating tables, specifying data types).</li>
+  <li><strong>Index:</strong> A data structure that speeds up data retrieval by creating pointers to specific rows based on certain column values.</li>
+  <li><strong>View:</strong> A virtual table based on the result set of a query, providing a customized way to access data from one or more underlying tables.</li>
+</ul>
+
+  <h2 id="dictionary">5. Data Dictionary</h2>
+  <p>In DBMS, a data dictionary is a centralized repository of information about data, including its meaning, relationships, usage, and format. It acts as a metadata catalog, describing the structure, content, and characteristics of the database. Data dictionaries help with understanding data assets, defining data elements, and maintaining data quality. Some of the major aspects of data dictionary are:  </p>
+  <ul>
+  <li><strong>Metadata Repository:</strong> A data dictionary stores information about the data itself, not the data's content.</li>
+  <li><strong>Centralized Control:</strong> It provides a single source of truth for data definitions, reducing redundancy and inconsistencies.</li>
+  <li><strong>Data Description:</strong> It defines data elements, including their names, data types, sizes, relationships, and constraints.</li>
+  <li><strong>Documentation:</strong> It serves as documentation for the database, helping developers, analysts, and administrators understand and use the data.</li>
+  <li><strong>Quality Control:</strong> It helps enforce data quality through validation rules, integrity constraints, and audit trails.</li>
+  <li><strong>Standardization:</strong> It promotes standardization across different database systems and applications.</li>
+  <li><strong>Active vs. Passive:</strong> Data dictionaries can be active (automatically updated) or passive (manually maintained).</li>
+  <li><strong>Components:</strong> Typical components include table descriptions, column descriptions, data type definitions, relationships, and access control information.</li>
+</ul>
+
+
+  <h2 id="dbms"> DBMS </h2>
+  <p>A Database Management System (DBMS) is software that enables users to create, manage, and access databases. It acts as an interface between users and the database, providing tools for storing, retrieving, and manipulating data. DBMS also manages data security, integrity, and concurrency. </p>
+
+  <h3>Objectives</h3>
+  <ul>
+  <li><strong>1. Data Storage and Retrieval:</strong> A DBMS provides a structured way to store data, making it easier to organize, access, and manage. It allows for efficient storage and retrieval of data using predefined schemas and data models. DBMS facilitates quick and easy access to specific data through queries.</li>
+
+  <li><strong>2. Data Integrity:</strong> Ensuring data accuracy and consistency is a primary objective. DBMS implements integrity constraints (like primary and foreign keys) to maintain data accuracy and prevent inconsistencies. This includes entity integrity, referential integrity, and domain integrity.</li>
+
+  <li><strong>3. Data Security:</strong> DBMS provides mechanisms to protect sensitive data from unauthorized access. This includes user authentication, authorization, and encryption to ensure confidentiality and privacy.</li>
+
+  <li><strong>4. Data Independence:</strong> DBMS aims to minimize the impact of changes in data storage or structure on user applications. Logical data independence allows changes to the logical schema without affecting existing applications. Physical data independence allows changes to the physical storage without affecting applications or logical schema.</li>
+
+  <li><strong>5. Concurrency Control:</strong> DBMS allows multiple users to access and modify the database concurrently without compromising data integrity. Concurrency control mechanisms ensure that transactions remain isolated and consistent.</li>
+
+  <li><strong>6. Data Redundancy and Inconsistency Reduction:</strong> DBMS minimizes data redundancy, which occurs when the same data is stored in multiple locations. By centralizing data storage, DBMS helps reduce redundancy and inconsistencies, leading to better data management.</li>
+
+  <li><strong>7. Efficient Data Access and Sharing:</strong> DBMS facilitates efficient data access and sharing among different users and applications. This enables collaboration and informed decision-making based on readily available data.</li>
+</ul>
+
+
+  <h3>Advantages</h3>
+  <ul>
+  <li><strong>1. Improved Data Security:</strong> DBMS employs security measures like encryption and access controls to protect data from unauthorized access, theft, or manipulation.</li>
+
+  <li><strong>2. Data Integrity and Consistency:</strong> DBMS enforces constraints and rules to ensure data accuracy and consistency, preventing duplicate entries and ensuring data validity.</li>
+
+  <li><strong>3. Reduced Data Redundancy and Inconsistency:</strong> By storing data in a single repository, DBMS minimizes data duplication and inconsistencies across multiple applications.</li>
+
+  <li><strong>4. Efficient Data Sharing:</strong> DBMS allows authorized users to access and share data securely, facilitating collaboration and data sharing across different applications.</li>
+
+  <li><strong>5. Data Accessibility:</strong> DBMS provides mechanisms for users to easily access and retrieve data from a central location, streamlining data access and retrieval.</li>
+
+  <li><strong>6. Improved Data Integration:</strong> DBMS enables the integration of data from different sources into a single, unified view, providing a complete and consistent picture of the data.</li>
+
+  <li><strong>7. Enhanced Data Backup and Recovery:</strong> DBMS offers robust backup and recovery mechanisms to protect against data loss due to system failures or disasters.</li>
+</ul>
+
+
+  <h3>Disadvantages</h3>
+ <ul>
+  <li><strong>High Costs:</strong> 
+    <ul>
+      <li><strong>Initial Investment:</strong> DBMS implementation requires significant upfront costs for software licenses, hardware (servers, storage), and potentially specialized hardware (e.g., high-speed processors).</li>
+      <li><strong>Ongoing Maintenance:</strong> DBMS systems require ongoing maintenance, including updates, patching, and possibly dedicated IT staff for management, all contributing to higher operational costs.</li>
+      <li><strong>Training Costs:</strong> Staff need to be trained on the DBMS software and its administration, adding to the overall expense.</li>
+    </ul>
+  </li>
+
+  <li><strong>Complexity:</strong> 
+    <ul>
+      <li><strong>Design and Management:</strong> Database design can be complex, requiring careful planning and understanding of data relationships.</li>
+      <li><strong>Administration:</strong> Managing a DBMS, including setting up users, defining permissions, and ensuring data integrity, can be complex and time-consuming.</li>
+      <li><strong>Troubleshooting:</strong> Identifying and resolving issues in a DBMS can be challenging, requiring specialized knowledge and potentially leading to system downtime.</li>
+    </ul>
+  </li>
+
+  <li><strong> Performance Issues:</strong> 
+    <ul>
+      <li><strong>Slow Performance:</strong> For smaller datasets or simpler applications, DBMS can sometimes be slower than traditional file-based systems, particularly when handling complex queries or many concurrent users.</li>
+      <li><strong>Overhead:</strong> DBMS introduces processing overhead due to its complexity and the need to manage various features like concurrency control and recovery, which can impact performance.</li>
+    </ul>
+  </li>
+
+  <li><strong>Security Risks:</strong> 
+    <ul>
+      <li><strong>Vulnerability:</strong> DBMS can be vulnerable to security breaches if not properly configured and managed, potentially leading to data loss, corruption, or unauthorized access.</li>
+      <li><strong>Centralized Point of Failure:</strong> Because all data is centralized, a DBMS failure can have a significant impact on all users and applications relying on it.</li>
+    </ul>
+  </li>
+</ul>
+
+
+  <h2 id="models">Database Models</h2>
+  <ul>
+  <li><strong>1. Hierarchical Model:</strong> Organizes data in a tree-like structure with parent-child relationships. Data is accessed by traversing down the tree from the root. Simple to understand and implement for certain types of data. Limited flexibility in representing complex relationships.</li>
+
+  <li><strong>2. Network Model:</strong> Allows records to have multiple parents and children, creating a more flexible network structure. More complex than the hierarchical model but offers greater flexibility in representing relationships. Still limited in handling complex, many-to-many relationships.</li>
+
+  <li><strong>3. Relational Model:</strong> Organizes data into tables (relations) with rows (records) and columns (attributes). Data is related through primary and foreign keys. Widely used due to its simplicity, flexibility, and ability to handle complex queries. SQL (Structured Query Language) is the standard language for interacting with relational databases.</li>
+
+  <li><strong>4. Object-Oriented Model:</strong> Represents data as objects with attributes and methods. Supports complex data types and relationships. More closely aligned with object-oriented programming paradigms.</li>
+
+  <li><strong>5. NoSQL Model:</strong> A broad category of database models that are not based on the relational model. Includes various types like document, key-value, and graph databases. Well-suited for handling large volumes of unstructured or semi-structured data.</li>
+</ul>
+
+
+  <h2 id="constraints">Integrity Constraints</h2>
+  
+  <p><strong>Integrity Constraints:</strong> Integrity constraints are rules that enforce data quality and consistency in a database by limiting the types of data that can be entered. They help ensure data is accurate, reliable, and meaningful, preventing errors and maintaining data integrity. These constraints are essential for maintaining the reliability of a database and are defined using SQL statements.</p>
+
+  <li><strong>Types of Integrity Constraints:</strong>
+    <ul>
+      <li><strong>Entity Integrity:</strong> Ensures that every row in a table has a unique primary key, which is not null.</li>
+      <li><strong>Referential Integrity:</strong> Guarantees that foreign key values in one table match the primary key values in another table, maintaining relationships between tables.</li>
+      <li><strong>Domain Integrity:</strong> Limits the possible values that can be entered into a column by defining a specific data type or range of values.</li>
+      <li><strong>User-defined Integrity:</strong> Enforces custom rules and conditions specific to the application.</li>
+      <li><strong>NOT NULL Constraint:</strong> Prevents a column from accepting null values.</li>
+      <li><strong>UNIQUE Constraint:</strong> Ensures that all values in a column are unique, preventing duplicates.</li>
+      <li><strong>CHECK Constraint:</strong> Allows you to define conditions that must be met when data is inserted or updated.</li>
+      <li><strong>PRIMARY KEY:</strong> Uniquely identifies each row in a table.</li>
+      <li><strong>FOREIGN KEY:</strong> Establishes a relationship between two tables by linking a column in one table to the primary key of another.</li>
+    </ul>
+  </li>
+</ul>
+
+  <h2 id="normalization"> Normalization</h2>
+<p><strong>Normalization</strong> in DBMS is a technique used to organize data in a database efficiently by eliminating redundancy (duplicate data) and ensuring data integrity. It involves dividing large tables into smaller, related tables and establishing clear relationships between them. This process helps prevent data anomalies, makes updates easier, and improves the overall structure of the database. Normalization is typically carried out in stages known as normal forms (1NF, 2NF, 3NF, etc.), each with specific rules to follow.</p>
+
+  <section class="fbg" id="normal-forms">
+    <h3>Normal Forms</h3>
+  <ul>
+    <li>
+      <strong>First Normal Form (1NF):</strong> Ensures that all columns contain atomic (indivisible) values, and each record is unique. No repeating groups or arrays in any column.
+    </li>
+    <li>
+      <strong>Second Normal Form (2NF):</strong> Builds on 1NF by removing partial dependencies; all non-key attributes must be fully dependent on the entire primary key.
+    </li>
+    <li>
+      <strong>Third Normal Form (3NF):</strong> Builds on 2NF by removing transitive dependencies; non-key attributes must depend only on the primary key and not on other non-key attributes.
+    </li>
+  </ul>
+</section>
+
+
+  <section class="fbg" id="normalization-adv-disadv">
+
+  <h3>Advantages:</h3>
+  <ul>
+    <li><strong>Reduces Data Redundancy:</strong> Eliminates duplicate data to maintain consistency.</li>
+    <li><strong>Improves Data Integrity:</strong> Ensures accuracy by organizing data logically.</li>
+    <li><strong>Saves Storage Space:</strong> Optimizes memory by storing data efficiently.</li>
+    <li><strong>Simplifies Maintenance:</strong> Easier to modify, insert, and delete data without anomalies.</li>
+    <li><strong>Enhances Query Performance:</strong> In structured databases, some queries become more efficient.</li>
+  </ul>
+
+  <h3>Disadvantages:</h3>
+  <ul>
+    <li><strong>Complex Queries:</strong> Requires joining multiple tables to retrieve related data.</li>
+    <li><strong>Reduced Performance:</strong> Excessive normalization can slow down data retrieval.</li>
+    <li><strong>Difficult for Beginners:</strong> Designing and understanding normalized structures takes practice.</li>
+    <li><strong>More Joins:</strong> Increased number of joins can make queries slower and harder to write.</li>
+  </ul>
+</section>
+  <section class="fbg" id="dbms-types">
+  <h2>Centralized vs Distributed DBMS</h2>
+  <table border="1" cellspacing="0" style="text-align: center; width: 100%;">
+    <tr>
+      <th>Aspect</th>
+      <th>Centralized DBMS</th>
+      <th>Distributed DBMS</th>
+    </tr>
+    <tr>
+      <td>Data Storage</td>
+      <td>Single location</td>
+      <td>Multiple locations</td>
+    </tr>
+    <tr>
+      <td>Access Speed</td>
+      <td>Slower for remote users</td>
+      <td>Faster for local site users</td>
+    </tr>
+    <tr>
+      <td>Failure Impact</td>
+      <td>System-wide failure risk</td>
+      <td>More fault tolerant</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>Simpler</td>
+      <td>More complex</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Centralized control</td>
+      <td>Difficult to ensure across sites</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>Lower maintenance cost</td>
+      <td>Higher due to complexity</td>
+    </tr>
+  </table>
+</section>
+
+  <img src="image.png" alt="difference between" height="400">
+
+  <h2 id="security">11. Database Security</h2>
+  <p><strong>Introduction:</strong> Database security refers to the measures, policies, and practices used to protect databases from unauthorized access, misuse, or destruction. It involves securing the data within the database, the database management system (DBMS), and any associated applications. The goal is to ensure data confidentiality, integrity, and availability (CIA). </p>
+  <h3>Key Aspects of Database Security</h3>
+  <ul>
+    <li><strong>Confidentiality:</strong> Protecting sensitive data from unauthorized disclosure. This can be achieved through encryption, access controls, and data masking.</li>
+    <li><strong>Integrity:</strong> Ensuring the accuracy and consistency of data stored in the database. This involves implementing data validation, audit trails, and data backup and recovery mechanisms.</li>
+    <li><strong>Availability:</strong> Ensuring that authorized users can access the database when they need to. This includes implementing redundancy, disaster recovery plans, and performance optimization techniques.</li>
+    <li><strong>Authentication and Authorization:</strong> Verifying the identity of users and granting them the appropriate level of access to the database.</li>
+    <li><strong>Access Control:</strong> Limiting access to database resources based on user roles and permissions.</li>
+    <li><strong>Data Encryption:</strong> Protecting data while it's stored in the database and during transmission.</li>
+    <li><strong>Regular Backups:</strong> Creating copies of the database so that data can be restored in case of a failure or disaster.</li>
+  </ul>
+</section>
+  <section class="fbg" id="security-challenges">
+  <h2>Challenges of Database Security</h2>
+  <ul>
+    <li><strong>Unauthorized Access:</strong> Weak authentication or misconfigured access rights can allow users to access or manipulate sensitive data.</li>
+    <li><strong>SQL Injection and Cyberattacks:</strong> Poorly coded applications can be vulnerable to attacks that exploit database queries.</li>
+    <li><strong>Data Breaches:</strong> Improper server configuration, outdated software, or human error can lead to data leaks.</li>
+    <li><strong>Concurrency and Data Integrity:</strong> Ensuring consistent data when multiple users access or modify the database simultaneously is complex.</li>
+    <li><strong>Regulatory Compliance:</strong> Meeting legal requirements for data privacy (like GDPR or HIPAA) adds to the security burden.</li>
+    <li><strong>Encryption Key Management:</strong> Securely storing and managing encryption keys is essential but can be challenging.</li>
+    <li><strong>Backup and Recovery Security:</strong> Backups must be secured against theft or corruption, and recovery systems must be tested regularly.</li>
+    <li><strong>Monitoring and Auditing:</strong> Continuous tracking of database activity is necessary to detect suspicious behavior early.</li>
+  </ul>
+</section>
+
+
+  <section class="fbg" id="security-measures">
+  <h2>Database Security Measures</h2>
+  <ul>
+    <li><strong>Access Control:</strong> Define roles and permissions to restrict users from accessing unauthorized data.</li>
+    <li><strong>User Authentication:</strong> Require secure login credentials to verify user identity before granting access.</li>
+    <li><strong>Data Encryption:</strong> Encrypt data both at rest (in storage) and in transit (during transmission) to prevent interception or leaks.</li>
+    <li><strong>Regular Backups:</strong> Keep frequent backups to protect against data loss due to system failures or attacks.</li>
+    <li><strong>Activity Monitoring and Auditing:</strong> Track and log all access and actions within the database to detect suspicious behavior.</li>
+    <li><strong>Software Updates and Patch Management:</strong> Regularly update DBMS and related software to fix known vulnerabilities.</li>
+    <li><strong>Firewall and Network Security:</strong> Use firewalls and secure networks to limit external threats and unauthorized database access.</li>
+    <li><strong>Intrusion Detection Systems (IDS):</strong> Deploy systems to identify and alert on unauthorized access or anomalies.</li>
+  </ul>
+</section>
+
+
+  <section class="fbg" id="dba-role">
+  <h2>Role of Database Administrator (DBA)</h2>
+  <ul>
+    <li><strong>Database Installation and Configuration:</strong> Installs and sets up the database software and related tools.</li>
+    <li><strong>Backup and Recovery:</strong> Performs regular backups and ensures recovery procedures in case of system failure or data loss.</li>
+    <li><strong>Performance Monitoring:</strong> Analyzes and tunes database performance to ensure efficient data access and response time.</li>
+    <li><strong>Security Management:</strong> Controls user access, applies security measures, and ensures data is protected from unauthorized access.</li>
+    <li><strong>Data Integrity and Consistency:</strong> Enforces rules and constraints to maintain accurate and reliable data.</li>
+    <li><strong>User Management:</strong> Creates user roles, assigns permissions, and manages access levels.</li>
+    <li><strong>Database Upgrades and Maintenance:</strong> Keeps database systems up to date with patches and new features.</li>
+    <li><strong>Disaster Recovery Planning:</strong> Develops strategies to ensure minimal data loss and quick recovery during emergencies.</li>
+    <li><strong>Compliance and Auditing:</strong> Ensures the database meets regulatory and organizational policies through audits and reports.</li>
+  </ul>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 12 - DBMS Notes</title>
+  <link rel="stylesheet" href="pastq.css">
+</head>
+<body>
+    <nav class="navbar">
+    <a href="index.html">Home</a>
+     <a href="#DBMS">DBMS</a>
+    <a href="#DCAN">Data communication and networking</a>
+    <a href="#WEB">Web Tech II</a>
+    <a href="#C">C Programming II</a>
+    <a href="#OOP">Object oriented programming</a>
+    <a href="#SDLC">Software development life cycle</a>
+    <a href="#RTIT">Recent Trends in technology</a>
+  </nav>
+
+    <h1 id="DBMS">Database and DBMS Concepts</h1>
+
+    <h2>1. What is Database and DBMS?List out the advantages and disadvantages of DBMS.</h2>
+    
+    <div class="ans">
+<p><strong>Database</strong>: A database is an organized collection of data stored electronically, while a Database Management System (DBMS) is the software that manages and provides access to this data.</p>
+    <p><strong>DBMS (Database Management System)</strong>: A DBMS is a software system that allows users to interact with a database. It provides tools for creating, managing, and manipulating the data stored in the database. DBMS handles tasks like data storage, retrieval, security, and integrity. </p>
+    <h3>The advantages of DBMS are:</h3>
+    <ul>
+        <li>Reduces data redundancy</li>
+        <li>Ensures data consistency and integrity</li>
+        <li>Allows data sharing among multiple users</li>
+        <li>Provides backup and recovery</li>
+        <li>Improves data security</li>
+    </ul>
+    <h3>The disadvantages of DBMS are:</h3>
+    <ul>
+        <li>High initial cost and complexity</li>
+        <li>Requires technical expertise</li>
+        <li>System failure can affect all users</li>
+        <li>Performance may be slower in large systems</li>
+    </ul>
+    </div>
+
+    <h2>2. Differentiate between file processing system and DBMS.</h2>
+    <div class="ans">
+    <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>File Processing System</th>
+        <th>DBMS</th>
+    </tr>
+    <tr>
+        <td>In a file processing system, data is stored in separate individual files.</td>
+        <td>In a DBMS, data is stored in a centralized and organized database.</td>
+    </tr>
+    <tr>
+        <td>File processing systems often lead to high data redundancy due to duplicate data storage.</td>
+        <td>DBMS minimizes data redundancy by maintaining a single, consistent data source.</td>
+    </tr>
+    <tr>
+        <td>It is difficult to enforce security in file processing systems because of isolated file management.</td>
+        <td>DBMS provides better security features by managing user access and permissions centrally.</td>
+    </tr>
+    <tr>
+        <td>Retrieving and updating data is hard and time-consuming in file processing systems.</td>
+        <td>DBMS allows easier and more efficient data retrieval and updating using structured queries.</td>
+    </tr>
+</table>
+
+    </div>
+
+    <h2>3. Explain the different models of DBMS with advantages and disadvantages.</h2>
+   <div class="ans">
+    <h3>Hierarchical Model</h3>
+<p>The hierarchical model organizes data in a tree-like structure, where each record has a single parent and can have multiple children.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>It provides simple and fast access to hierarchical and nested data.</li>
+    <li>Data integrity is maintained through parent-child relationships.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>The model is inflexible and difficult to modify if the data structure changes.</li>
+    <li>It does not support many-to-many relationships naturally.</li>
+</ul>
+
+<h3>Network Model</h3>
+<p>The network model organizes data using a graph structure, allowing many-to-many relationships between records through sets.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>It supports complex relationships more effectively than the hierarchical model.</li>
+    <li>Data access is fast due to multiple access paths.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>The model is complex to design and manage.</li>
+    <li>It requires knowledge of data paths for querying.</li>
+</ul>
+
+<h3>Relational Model</h3>
+<p>The relational model stores data in tables consisting of rows and columns, and relationships are established through keys.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>It is easy to use and understand due to its tabular format.</li>
+    <li>Flexible querying is possible using SQL.</li>
+    <li>Normalization reduces data redundancy.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>It can be slower for handling highly complex or hierarchical data.</li>
+    <li>Requires more storage for maintaining relationships and indexes.</li>
+</ul>
+
+<h3>Object-Oriented Model</h3>
+<p>The object-oriented model represents data as objects, similar to those used in object-oriented programming languages.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>It supports complex and multimedia data types effectively.</li>
+    <li>It allows better integration with object-oriented applications.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>It is less widely adopted and supported compared to relational databases.</li>
+    <li>The design and implementation can be complex and resource-intensive.</li>
+</ul>
+</div>
+    <h2>4. What is a relational database? How is it different from other database models?</h2>
+   <div class="ans">
+    <p>A <strong>Relational Database</strong> stores data in tables with rows and columns, establishing relationships between different pieces of information. </p>
+    <p><strong>Differences from other models:</strong></p>
+    <ul>
+        <li>Uses tables, unlike hierarchical/tree or network/graph structures.</li>
+        <li>Allows flexible querying with SQL.</li>
+        <li>Supports normalization to reduce redundancy.</li>
+        <li>Easier to modify and manage.</li>
+    </ul>
+    </div>
+
+    <h2>5. What is data redundancy? How does DBMS help in reducing it?</h2>
+    <div class="ans">
+    <p><strong>Data Redundancy</strong> is the repetition of the same data in multiple places, which wastes storage and may cause inconsistency.</p>
+    <p><strong> DBMS reduces redundancy as follows:</strong></p>
+    `
+    <ul>
+        <li>Centralizing data storage.</li>
+        <li>Normalizing tables to eliminate duplicate data.</li>
+        <li>Using relationships (keys) instead of repeated values.</li>
+    </ul>
+    </div>
+
+    <h2>6. Difference between Centralized and Distributed Database Systems</h2>
+    <div class="ans">
+        <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Centralized Database</th>
+        <th>Distributed Database</th>
+    </tr>
+    <tr>
+        <td>In a centralized database system, all data is stored at a single central location.</td>
+        <td>In a distributed database system, data is stored across multiple physical locations.</td>
+    </tr>
+    <tr>
+        <td>Centralized databases are easy to manage, but they are more vulnerable to system failures.</td>
+        <td>Distributed databases are more reliable in case of failures, but they are more complex to manage and maintain.</td>
+    </tr>
+    <tr>
+        <td>Remote users experience slower access times in centralized databases due to the single access point.</td>
+        <td>In distributed databases, local access is faster since data is located closer to users.</td>
+    </tr>
+    <tr>
+        <td>Centralized systems are generally less expensive to implement and maintain.</td>
+        <td>Distributed systems require a higher setup cost due to the complexity of infrastructure and synchronization.</td>
+    </tr>
+</table>
+
+    </div>
+
+    <h2>7. Who is Database Administrator (DBA)? What are the major responsibilities of DBA?</h2>
+    <div class="ans">
+        <p>A <strong>Database Administrator (DBA)</strong> is a professional responsible for the installation, configuration, maintenance, and security of database systems. The DBA ensures that databases are operating efficiently, data is accurate and accessible, and users have the necessary permissions while maintaining the overall health and performance of the database infrastructure.</p>
+
+<p><strong>Major Responsibilities:</strong></p>
+<ul>
+    <li>The DBA installs and configures the database management system (DBMS) to suit the organization’s requirements.</li>
+    <li>They manage user accounts and control access to the database to ensure that only authorized users can perform specific operations.</li>
+    <li>The DBA monitors the performance of the database to detect and resolve issues such as slow queries or system bottlenecks.</li>
+    <li>They are responsible for performing regular backups and implementing recovery procedures to prevent data loss in case of failure.</li>
+    <li>The DBA ensures the integrity and consistency of data by enforcing rules and constraints within the database system.</li>
+    <li>They apply updates, patches, and modifications to keep the database system up to date and secure from vulnerabilities.</li>
+</ul>
+
+    </div>
+
+    <h2>Define normalization. Explain 1NF, 2NF and 3NF with suitable examples. Explain the
+normalization process with examples.</h2>
+  <div class="ans">
+
+<p><strong>Normalization</strong> is the process of organizing data in a database to reduce data redundancy and improve data integrity. It involves dividing large, complex tables into smaller, simpler ones and defining relationships between them. The main goal of normalization is to eliminate duplicate data, ensure data dependencies make sense, and make the database more efficient, flexible, and scalable. This process follows a set of rules called normal forms, each with specific conditions to meet.</p>
+
+<h3>First Normal Form (1NF)</h3>
+<p>A relation is in <strong>1NF</strong> if all the attributes contain only atomic (indivisible) values and each record is unique.</p>
+<p><strong>Example (Not in 1NF):</strong></p>
+<pre>
+StudentID | Name | Subjects
+--------------------------------
+101       | Ram  | Math, Science
+102       | Sita | English, Math
+</pre>
+<p>Here, the <code>Subjects</code> column contains multiple values, which violates 1NF.</p>
+<p><strong>Conversion to 1NF:</strong></p>
+<pre>
+StudentID | Name | Subject
+------------------------------
+101       | Ram  | Math
+101       | Ram  | Science
+102       | Sita | English
+102       | Sita | Math
+</pre>
+<p>Now, each attribute holds atomic values, and the table satisfies 1NF.</p>
+
+<h3>Second Normal Form (2NF)</h3>
+<p>A table is in <strong>2NF</strong> if it is in 1NF and all non-prime attributes are fully functionally dependent on the entire primary key (i.e., no partial dependency).</p>
+<p><strong>Example (Not in 2NF):</strong></p>
+<pre>
+StudentID | Subject | StudentName
+-------------------------------
+101       | Math    | Ram
+101       | Science | Ram
+102       | English | Sita
+</pre>
+<p>Here, <code>StudentName</code> depends only on <code>StudentID</code>, not on the combination of <code>StudentID</code> and <code>Subject</code>, so there is a partial dependency.</p>
+<p><strong>Conversion to 2NF:</strong></p>
+<pre>
+Table 1: Student
+StudentID | StudentName
+------------------------
+101       | Ram
+102       | Sita
+
+Table 2: Enrollment
+StudentID | Subject
+---------------------
+101       | Math
+101       | Science
+102       | English
+</pre>
+<p>Now all non-key attributes depend on the full primary key, satisfying 2NF.</p>
+
+<h3>Third Normal Form (3NF)</h3>
+<p>A table is in <strong>3NF</strong> if it is in 2NF and there are no transitive dependencies, i.e., non-key attributes should not depend on other non-key attributes.</p>
+<p><strong>Example (Not in 3NF):</strong></p>
+<pre>
+StudentID | StudentName | Dept | HOD
+--------------------------------------
+101       | Ram         | CS   | Dr. Sharma
+102       | Sita        | IT   | Prof. Joshi
+</pre>
+<p>Here, <code>HOD</code> depends on <code>Dept</code>, not directly on <code>StudentID</code>, which causes a transitive dependency.</p>
+<p><strong>Conversion to 3NF:</strong></p>
+<pre>
+Table 1: Student
+StudentID | StudentName | Dept
+-------------------------------
+101       | Ram         | CS
+102       | Sita        | IT
+
+Table 2: Department
+Dept | HOD
+-------------
+CS   | Dr. Sharma
+IT   | Prof. Joshi
+</pre>
+<p>This removes the transitive dependency, and the tables now satisfy 3NF.</p>
+
+  </div>
+  <h2>9. Explain the terms: primary key, foreign key, and candidate key with examples.</h2>
+  <div class="ans">
+<h3>Primary Key</h3>
+<p>A <strong>Primary Key</strong> is a field or a combination of fields in a database table that uniquely identifies each record in that table. It must contain unique values and cannot contain NULL values. The primary key ensures that each record is distinct and provides a way to reference specific records easily.</p>
+<p><strong>Example:</strong> Consider the following <em>Student</em> table where <code>StudentID</code> is the primary key:</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>StudentID (Primary Key)</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Ram</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>Sita</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>Hari</td>
+        <td>17</td>
+    </tr>
+</table>
+
+<h3>Foreign Key</h3>
+<p>A <strong>Foreign Key</strong> is a field (or collection of fields) in one table that refers to the primary key in another table. It is used to establish and enforce a link between the data in two tables. Foreign keys help maintain referential integrity by ensuring that a value in one table corresponds to a valid record in the related table.</p>
+<p><strong>Example:</strong> Consider the following two tables, <em>Student</em> and <em>Enrollment</em>. The <code>StudentID</code> in the <em>Enrollment</em> table is a foreign key referring to the <code>StudentID</code> in the <em>Student</em> table.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="margin-bottom: 10px;">
+    <caption><strong>Student Table</strong></caption>
+    <tr>
+        <th>StudentID (Primary Key)</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Ram</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>Sita</td>
+    </tr>
+</table>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <caption><strong>Enrollment Table</strong></caption>
+    <tr>
+        <th>EnrollmentID</th>
+        <th>StudentID (Foreign Key)</th>
+        <th>Course</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>101</td>
+        <td>Math</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>102</td>
+        <td>Science</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>101</td>
+        <td>English</td>
+    </tr>
+</table>
+
+<h3>Candidate Key</h3>
+<p>A <strong>Candidate Key</strong> is any field, or set of fields, that can uniquely identify a record in a table. A table can have multiple candidate keys, but one of them is selected as the primary key. Candidate keys must have unique values and cannot contain NULLs.</p>
+<p><strong>Example:</strong> In the following <em>Users</em> table, both <code>Email</code> and <code>Username</code> can uniquely identify a user and hence are candidate keys. One of them can be chosen as the primary key.</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>UserID</th>
+        <th>Email (Candidate Key)</th>
+        <th>Username (Candidate Key)</th>
+        <th>Full Name</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ram@example.com</td>
+        <td>ram123</td>
+        <td>Ram Shrestha</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>sita@example.com</td>
+        <td>sita98</td>
+        <td>Sita Karki</td>
+    </tr>
+</table>
+
+  </div>
+    <h2>10. What is SQL? Explain its components and common functions.</h2>
+    <div class="ans">
+
+    <p><strong>SQL (Structured Query Language)</strong> is a programming language for storing and processing information in a relational database.</p>
+        <ul>
+        <li><strong>DDL</strong> (Data Definition Language): CREATE, ALTER, DROP</li>
+        <li><strong>DML</strong> (Data Manipulation Language): INSERT, UPDATE, DELETE</li>
+        <li><strong>DQL</strong> (Data Query Language): SELECT</li>
+        <li><strong>DCL</strong> (Data Control Language): GRANT, REVOKE</li>
+        <li><strong>TCL</strong> (Transaction Control Language): COMMIT, ROLLBACK</li>
+    </ul>
+    <h3>Common Functions:</h3>
+    <ul>
+        <li>Aggregate: COUNT(), SUM(), AVG(), MAX(), MIN()</li>
+        <li>String: UPPER(), LOWER(), CONCAT()</li>
+        <li>Date: NOW(), DATE()</li>
+    </ul>
+</div>
+<h2> 11. Write SQL commands to perform the following operations</h2>
+<div class="ans">
+    <p>a. Create table:</p>
+    <code>
+        CREATE TABLE students (Id INT, Name VARCHAR(50), Class VARCHAR(10), Marks INT);
+    </code>
+
+    <p>b. Insert records:</p>
+    <code>
+        INSERT INTO students VALUES (1, 'Anita', '10A', 78);<br>
+        INSERT INTO students VALUES (2, 'Ravi', '10B', 82);<br>
+        INSERT INTO students VALUES (3, 'Sita', '10A', 90);
+    </code>
+
+    <p>c. Display all records:</p>
+    <code>
+        SELECT * FROM students;
+    </code>
+
+    <p>d. Update marks of 'Anita':</p>
+    <code>
+        UPDATE students SET Marks = 85 WHERE Name = 'Anita';
+    </code>
+
+    <p>e. Delete record with id = 3:</p>
+    <code>
+        DELETE FROM students WHERE Id = 3;
+    </code>
+</div>
+<h2>12. Definitions of Key Database Terms</h2>
+<div class="ans">
+<h3>a. Data Dictionary</h3>
+<p>A <strong>Data Dictionary</strong> is a centralized repository of information about data such as meaning, relationships to other data, origin, usage, and format. It contains metadata (data about data) and helps in managing the structure and schema of a database.</p>
+
+<h3>b. Primary Key</h3>
+<p>A <strong>Primary Key</strong> is a field or a set of fields in a table that uniquely identifies each record in that table. It ensures that no two rows have the same value for the primary key and that the key is never NULL.</p>
+
+<h3>c. Relationship</h3>
+<p>A <strong>Relationship</strong> in a database refers to a connection between two or more tables based on common fields. Relationships help in organizing data efficiently and allow querying related data across multiple tables using keys.</p>
+
+<h3>d. Data Manipulation Language (DML)</h3>
+<p><strong>Data Manipulation Language (DML)</strong> is a subset of SQL used to manipulate data within existing database objects. It includes operations like inserting, updating, deleting, and retrieving data. Common DML commands include <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, and <code>SELECT</code>.</p>
+
+<h3>e. Structured Query Language (SQL)</h3>
+<p><strong>Structured Query Language (SQL)</strong> is the standard language used to interact with relational databases. It allows users to define, manipulate, control, and query data using a consistent syntax. SQL includes DDL, DML, DCL, and TCL commands.</p>
+
+<h3>f. Data Integrity</h3>
+<p><strong>Data Integrity</strong> refers to the accuracy, consistency, and reliability of data stored in a database. It ensures that the data entered into the database is valid, consistent, and free from errors through the use of constraints like primary keys, foreign keys, and unique constraints.</p>
+
+<h3>g. Data Definition Language (DDL)</h3>
+<p><strong>Data Definition Language (DDL)</strong> is a subset of SQL used to define and manage database structure or schema. It includes commands such as <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, and <code>TRUNCATE</code>, which help in creating and modifying tables and other database objects.</p>
+
+<h3>h. Data Security</h3>
+<p><strong>Data Security</strong> involves protecting digital data from unauthorized access, corruption, or theft. In databases, this includes implementing user authentication, access controls, encryption, and backup policies to safeguard sensitive information.</p>
+
+<h3>i. Database System</h3>
+<p>A <strong>Database System</strong> consists of the database itself, the DBMS (Database Management System), and the applications or users that interact with it. It provides an organized way to store, retrieve, and manage data efficiently while ensuring integrity and security.</p>
+</div>
+<h1 id="C">C programming II </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade 12 C Programming - Function Questions</title>
+</head>
+<body>
+
+    <h2>1. Write a C program to generate the Fibonacci series up to the 10th term using a function.</h2>
+    <p>Define a <code>void</code> function <code>fibonacci(int terms)</code> that prints the series using iteration. In <code>main()</code>, call <code>fibonacci(10);</code></p>
+    <pre>
+void fibonacci(int terms) {
+    int a = 0, b = 1, c;
+    printf("Fibonacci series: ");
+    for (int i = 1; i <= terms; i++) {
+        printf("%d ", b);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+
+int main() {
+    fibonacci(10);
+    return 0;
+}
+    </pre>
+
+    <h2>2. Write a C program that reads a number and checks whether it is odd or even using a function.</h2>
+    <pre>
+void checkOddEven(int n) {
+    if (n % 2 == 0)
+        printf("%d is even.\n", n);
+    else
+        printf("%d is odd.\n", n);
+}
+
+int main() {
+    int x;
+    scanf("%d", &x);
+    checkOddEven(x);
+    return 0;
+}
+    </pre>
+
+    <h2>3. Write a C function that checks if a number is divisible by 5 but not by 7.</h2>
+    <pre>
+void checkDiv(int n) {
+    if (n % 5 == 0 && n % 7 != 0)
+        printf("%d is divisible by 5 but not by 7.\n", n);
+    else
+        printf("%d does not meet the condition.\n", n);
+}
+    </pre>
+
+    <h2>4. Write a C program to calculate the factorial of a number using a recursive function.</h2>
+    <pre>
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    int result = factorial(num);
+    printf("Factorial of %d is %d", num, result);
+    return 0;
+}
+    </pre>
+
+    <h2>5. Write a C program to calculate the nth Fibonacci term using a recursive function.</h2>
+    <pre>
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    else if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+    </pre>
+
+    <h2>6. Define a function and list its advantages. Also explain pass-by-value and pass-by-reference with examples.</h2>
+    <p>A function in C is a self-contained block of code designed to perform a specific task. It serves as a fundamental building block for organizing and structuring C programs, promoting modularity, reusability, and readability.</p>
+    <p><strong>Advantages:</strong> 
+      <ul>
+        <li><strong>Modularity:</strong> Divides a large program into smaller parts, making it easier to manage and understand.</li>
+        <li><strong>Code Reusability:</strong> Functions can be reused multiple times, saving time and reducing errors.</li>
+        <li><strong>Readability:</strong> Named functions clarify program logic and make the code easier to follow.</li>
+        <li><strong>Easy Debugging:</strong> Errors are easier to locate and fix when the code is organized into functions.</li>
+        <li><strong>Reduced Redundancy:</strong> Common tasks can be written once and reused wherever needed.</li>
+        <li><strong>Maintenance:</strong> Updating code is easier since changes can be made in individual functions.</li>
+        <li><strong>Abstraction:</strong> Users can use a function without needing to understand its internal details.</li>
+    </ul>
+</p>
+    <pre>
+    Pass-by-value
+int add(int a, int b) {
+    return a + b;
+}
+
+    Pass-by-reference
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+    </pre>
+
+    <h2>7. Write a function to calculate the area of a rectangle and demonstrate its use.</h2>
+    <pre>
+float areaOfRectangle(float l, float w) {
+    return l * w;
+}
+
+int main() {
+    float length = 5.0, width = 3.0;
+    float area = areaOfRectangle(length, width);
+    printf("Area = %.2f", area);
+    return 0;
+}
+    </pre>
+
+    <h2>8. Write a C program to demonstrate passing an array to a function.</h2>
+    <pre>
+void displayArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};
+    displayArray(numbers, 5);
+    return 0;
+}
+    </pre>
+
+    <h2>9. Explain recursion and write a C program to compute factorial using recursion.</h2>
+    <p>Recursive Function is a function that repeats or uses its own previous term to calculate subsequent terms and thus forms a sequence of terms. </p>
+    <pre>
+int factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n - 1);
+}
+    </pre>
+
+    <h2>10. Write a C program to check if a number is Armstrong using a recursive function.</h2>
+    <pre>
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+
+int isArmstrong(int num, int digits) {
+    if (num == 0) return 0;
+    return power(num % 10, digits) + isArmstrong(num / 10, digits);
+}
+
+int main() {
+    int num = 153, digits = 3;
+    int sum = isArmstrong(num, digits);
+    if (sum == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
+    return 0;
+}
+    </pre>
+</body>
+</html>
+
+   
+</body>
+</html>

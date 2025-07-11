@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 12 - DBMS Notes</title>
+  <link rel="stylesheet" href="chap4.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#work">Working with a function</a>
+    <a href="#cate">Categories of Functions</a>
+     <a href="#sc">Storage Class</a>
+
+  </nav>
+   <h2 id="work">1. Working with a Function</h2>
+<h3 >a. Define Function</h3>
+<p>In C programming, a function is a block of code designed to perform a specific task. Functions help break a large program into smaller, manageable parts. This modular approach improves readability, reduces code duplication, and simplifies debugging. Once a function is defined, it can be called multiple times in a program.</p>
+</div>
+<h3>b. Syntax of a Function</h3>
+<p>The general syntax for defining a function in C is:</p>
+<pre>
+return_type function_name(parameter_list) {
+    // function body
+}
+</pre>
+<p>The return type specifies the data type of the value the function returns. The function name is an identifier. The parameter list includes input values (optional).</p>
+
+<h3>c. Types of Functions</h3>
+<ul>
+    <li>Library Functions: These are predefined functions provided by C libraries. Examples include printf(), scanf(), strlen(), sqrt().</li>
+    <li>User-Defined Functions: These are created by the programmer to perform custom tasks and improve code reusability.</li>
+</ul>
+
+<h3>d. Components of a Function</h3>
+
+<h4>i. Function Prototype</h4>
+<p>The function prototype is a declaration that tells the compiler about the function’s name, return type, and parameters. It is written before the main function.</p>
+<pre>
+int add(int a, int b);
+</pre>
+
+<h4>ii. Function Call</h4>
+<p>The function call is used to execute the function. When called, control transfers to the function's body.</p>
+<pre>
+int result = add(5, 3);
+</pre>
+
+<h4>iii. Function Definition</h4>
+<p>This is the actual implementation where the logic of the function is written.</p>
+<pre>
+int add(int a, int b) {
+    return a + b;
+}
+</pre>
+
+<h4>iv. Return Type</h4>
+<p>The return type specifies the kind of value a function returns. If it returns nothing, the return type is void.</p>
+
+<h2 id="cate ">2. Categories of Functions with Examples</h2>
+
+<h3>i. Function with Return Type but No Arguments</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+int getNumber() {
+    int num = 50;
+    return num;
+}
+
+int main() {
+    int result = getNumber();
+    printf("Value: %d", result);
+    return 0;
+}
+</pre>
+
+<h3>ii. Function with Return Type and Arguments</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+int multiply(int x, int y) {
+    return x * y;
+}
+
+int main() {
+    int product = multiply(4, 5);
+    printf("Product: %d", product);
+    return 0;
+}
+</pre>
+
+<h3>iii. Function with No Return Type and No Arguments</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+void greet() {
+    printf("Hello, welcome to C programming!");
+}
+
+int main() {
+    greet();
+    return 0;
+}
+</pre>
+
+<h3>iv. Function with No Return Type but with Arguments</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+void display(int number) {
+    printf("The number is: %d", number);
+}
+
+int main() {
+    display(10);
+    return 0;
+}
+</pre>
+
+<h2 id="sc">3. Storage Classes in C</h2>
+
+<p>Storage classes define the scope, lifetime, and visibility of variables within a program. There are four main storage classes in C:</p>
+
+<h3>i. Automatic (auto)</h3>
+<p>Auto is the default storage class for local variables declared inside functions. These variables are created when the function is called and destroyed when it ends.</p>
+<pre>
+void example() {
+    auto int x = 10;
+    printf("Value of x: %d", x);
+}
+</pre>
+
+<h3>ii. External (extern)</h3>
+<p>The extern storage class is used to declare a global variable defined elsewhere. It allows sharing variables across multiple files.</p>
+<pre>
+// In File1.c
+extern int count;
+
+void show() {
+    printf("Count is %d", count);
+}
+</pre>
+
+<h3>iii. Register (register)</h3>
+<p>The register storage class requests the compiler to store the variable in a CPU register for faster access. It cannot be accessed using pointers.</p>
+<pre>
+void fastAccess() {
+    register int speed = 100;
+    printf("Speed is %d", speed);
+}
+</pre>
+
+<h3>iv. Static (static)</h3>
+<p>The static storage class retains the value of a variable even after the function has completed execution. It is initialized only once and maintains its state.</p>
+<pre>
+void counter() {
+    static int count = 0;
+    count++;
+    printf("Count = %d\n", count);
+}
+
+int main() {
+    counter();
+    counter();
+    counter();
+    return 0;
+}
+</pre>
+
+</div>
+
+  <h2>4. Recursive Function</h2>
+
+<p>A <strong>recursive function</strong> is a function that calls itself in order to solve a problem. The problem is divided into smaller sub-problems, and recursion continues until a base case is met. Recursion is useful for problems that can be broken down into similar sub-problems, like factorials, Fibonacci numbers, or tree traversal.</p>
+
+<h3>Syntax of Recursive Function</h3>
+<pre>
+return_type function_name(parameters) {
+    if (base_condition)
+        return result;
+    else
+        return function_name(smaller_problem);
+}
+</pre>
+
+<h3>Example: Factorial Using Recursion</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    int result = factorial(num);
+    printf("Factorial of %d is %d", num, result);
+    return 0;
+}
+</pre>
+
+<hr>
+
+<h2>5. Demonstration of Passing Array to a Function</h2>
+
+<p>Arrays in C can be passed to functions by specifying the array name without brackets. The function receives the base address of the array, allowing it to access and manipulate the original elements.</p>
+
+<h3>Example: Passing an Array to a Function</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+void displayArray(int arr[], int size) {
+    for (int i = 0; i &lt; size; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};
+    displayArray(numbers, 5);
+    return 0;
+}
+</pre>
+
