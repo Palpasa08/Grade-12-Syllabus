@@ -203,6 +203,36 @@ int main() {
     return 0;
 }
 </pre>
+<h3>Example: Sum of n natural numbers using Recursion</h3>
+<pre>
+#include &lt;stdio.h&gt;
+int sum(int n) {
+    if (n == 0)  
+        return 0;
+    else
+        return n + sum(n - 1);  
+}
+
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Sum of first %d numbers is %d\n", n, sum(n));
+    return 0;
+}
+</pre>
+<h3>Advantages</h3>
+  <ul>
+    <li>Simplifies code by dividing complex problems into smaller similar problems.</li>
+    <li>Makes code easier to read and maintain for problems naturally defined recursively (like tree traversals, factorial, Fibonacci).</li>
+  </ul>
+
+  <h3>Disadvantages</h3>
+  <ul>
+    <li>Recursive calls use more memory because each call adds a new layer to the call stack.</li>
+    <li>Can lead to stack overflow if recursion depth is too large.</li>
+    <li>Sometimes less efficient than iterative solutions due to overhead of multiple function calls.</li>
+  </ul>
 
 <hr>
 
@@ -226,4 +256,424 @@ int main() {
     return 0;
 }
 </pre>
+<h2>6. ER Diagrams</h2>
+
+<h3>Introduction</h3>
+<p>An <strong>Entity-Relationship (ER) Diagram</strong> is a visual representation of data and how it is related. It is used in database design to model the logical structure of a database. It includes entities, their attributes, and the relationships between entities.</p>
+<img src="image.png" alt="ER diagram">
+<h3>Entities</h3>
+<p>An entity represents a real-world object or concept, such as <em>Student</em> or <em>Course</em>. It is typically shown as a rectangle in an ER diagram.</p>
+
+<h3>Attributes</h3>
+<p>Attributes describe properties of an entity. For example, a <em>Student</em> entity may have attributes like <em>Student_ID</em>, <em>Name</em>, and <em>Age</em>. Attributes are shown as ovals connected to their entity.</p>
+
+<h3>Relationships</h3>
+<p>Relationships show how entities are connected to each other. For example, a <em>Student</em> "enrolls in" a <em>Course</em>. Relationships are represented as diamonds in ER diagrams.</p>
+
+<h3>Cardinality and Degree</h3>
+<ul>
+  <li><strong>Cardinality</strong> defines the number of instances of one entity that can be associated with instances of another. Examples include:
+    <ul>
+      <li>One-to-One</li>
+      <li>One-to-Many</li>
+      <li>Many-to-Many</li>
+    </ul>
+  </li>
+  <li><strong>Degree</strong> of a relationship refers to the number of entity sets involved:
+    <ul>
+      <li>Binary: between two entities</li>
+      <li>Ternary: between three entities</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Common Symbols in ER Diagrams</h3>
+<img src="image copy.png"  alt="shapes" height="500">
+<hr>
+
+<h2>7. SQL (DDL and DML)</h2>
+
+<h3>Data Constraints</h3>
+<ul>
+  <li>The <strong>NOT NULL</strong> constraint ensures that a column cannot have any NULL values; every record must contain a value for that column.</li>
+  <li>The <strong>UNIQUE</strong> constraint ensures that all the values in a column are different, preventing duplicate entries.</li>
+  <li>The <strong>PRIMARY KEY</strong> constraint uniquely identifies each record in a table and combines the functionality of NOT NULL and UNIQUE.</li>
+  <li>The <strong>AUTO INCREMENT</strong> attribute automatically generates a unique number for a column whenever a new record is inserted into the table.</li>
+</ul>
+
+
+<pre>
+CREATE TABLE Students (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE
+);
+</pre>
+
+<h3>Operators (AND, OR, NOT)</h3>
+<pre>
+SELECT * FROM Students 
+WHERE Age > 18 AND Gender = 'Male';
+
+SELECT * FROM Students 
+WHERE City = 'Delhi' OR City = 'Mumbai';
+
+SELECT * FROM Students 
+WHERE NOT (Marks < 35);
+</pre>
+
+<h3>WHERE Clause</h3>
+<p>The <code>WHERE</code> clause is used to filter records that fulfill a specified condition.</p>
+<pre>
+SELECT * FROM Students 
+WHERE Age &gt; 18;
+</pre>
+
+<h3>ORDER BY</h3>
+<p>The <code>ORDER BY</code> clause is used to sort the result-set in ascending (default) or descending order.</p>
+<pre>
+SELECT * FROM Students 
+ORDER BY Name ASC;
+
+SELECT * FROM Students 
+ORDER BY Marks DESC;
+</pre>
+
+<h3>SQL JOINs</h3>
+<p>JOINs are used to combine rows from two or more tables based on a related column.</p>
+
+<h4>INNER JOIN</h4>
+<pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+INNER JOIN Courses ON Students.CourseID = Courses.ID;
+</pre>
+
+<h4>LEFT JOIN</h4>
+<pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+LEFT JOIN Courses ON Students.CourseID = Courses.ID;
+</pre>
+
+<h4>RIGHT JOIN</h4>
+<pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+RIGHT JOIN Courses ON Students.CourseID = Courses.ID;
+</pre>
+
+<h4 >FULL JOIN</h4>
+<pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+FULL OUTER JOIN Courses ON Students.CourseID = Courses.ID;
+</pre>
+<h2>Structure and Union</h2>
+
+  <h3>Structure</h3>
+
+  <h4>Introduction and Syntax</h4>
+  <p>
+    A structure in C is a user-defined data type that allows grouping variables of different types under a single name.
+  </p>
+  <p><strong>Syntax:</strong></p>
+  <pre>
+struct structure_name {
+    data_type member1;
+    data_type member2;
+    ...
+};
+  </pre>
+
+  <h4>Structure Size</h4>
+  <p>
+    The size of a structure depends on the combined size of its members, plus possible padding added by the compiler for alignment.
+  </p>
+
+  <h4>Accessing Members of a Structure</h4>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    struct Point p1;
+    p1.x = 10;
+    p1.y = 20;
+    printf("Point coordinates: (%d, %d)\n", p1.x, p1.y);
+    return 0;
+}
+  </pre>
+
+  <h4>Nested Structure</h4>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+struct Student {
+    char name[50];
+    struct Date dob; // Nested structure
+};
+
+int main() {
+    struct Student s = {"Alice", {15, 8, 2000}};
+    printf("%s was born on %d/%d/%d\n", s.name, s.dob.day, s.dob.month, s.dob.year);
+    return 0;
+}
+  </pre>
+
+  <h4>Array of Structures</h4>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+struct Point {
+    int x, y;
+};
+
+int main() {
+    struct Point points[3] = {{1, 2}, {3, 4}, {5, 6}};
+    for (int i = 0; i &lt; 3; i++) {
+        printf("Point %d: (%d, %d)\n", i+1, points[i].x, points[i].y);
+    }
+    return 0;
+}
+  </pre>
+
+  <h4>Passing Structure to Function</h4>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+struct Point {
+    int x, y;
+};
+
+void printPoint(struct Point p) {
+    printf("Point: (%d, %d)\n", p.x, p.y);
+}
+
+int main() {
+    struct Point p1 = {10, 20};
+    printPoint(p1);
+    return 0;
+}
+  </pre>
+
+  <h3>Union</h3>
+
+  <h4>Introduction and Syntax</h4>
+  <p>
+    A union is a user-defined data type in C similar to a structure, but all members share the same memory location. This means only one member can store a value at any given time.
+  </p>
+  <p><strong>Syntax:</strong></p>
+  <pre>
+union union_name {
+    data_type member1;
+    data_type member2;
+    ...
+};
+  </pre>
+
+  <h4>Comparison between Structure and Union</h4>
+  <img src="image copy 3.png" alt="diff">
+
+  <h2>Pointers</h2>
+
+  <h3>Introduction and Syntax</h3>
+  <p>
+    A pointer is a variable that stores the memory address of another variable.
+  </p>
+  <p><strong>Syntax:</strong></p>
+  <pre>
+data_type *pointer_name;
+  </pre>
+
+  <h3>Usage and Working</h3>
+  <p>
+    Pointers allow direct access and manipulation of memory locations, making them powerful for dynamic memory allocation, arrays, and functions.
+  </p>
+
+  <h3>Concept of Value and Address</h3>
+  <ul>
+    <li><strong>Value</strong>: The actual data stored in a variable.</li>
+    <li><strong>Address</strong>: The location in memory where the value is stored.</li>
+  </ul>
+
+  <h3>Declaration and Initialization</h3>
+  <pre>
+int a = 10;
+int *p = &a;  // Pointer p holds the address of variable a
+  </pre>
+
+  <h3>Pointer and Function</h3>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+void increment(int *ptr) {
+    (*ptr)++;  // Dereference pointer to increment value
+}
+
+int main() {
+    int num = 5;
+    increment(&num);
+    printf("Incremented value: %d\n", num);  // Outputs 6
+    return 0;
+}
+  </pre>
+
+  <h3>Call by Reference</h3>
+  <p>Passing address of variable to a function to modify the original variable.</p>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    swap(&x, &y);
+    printf("x = %d, y = %d\n", x, y);  // Outputs x=20, y=10
+    return 0;
+}
+  </pre>
+
+  <h3>Comparison between Call by Value and Call by Reference</h3>
+  <img src="image copy 2.png" alt="difference">
+
+  <h3>Pointer with Arrays</h3>
+  <p><strong>Code Example:</strong></p>
+  <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[] = {10, 20, 30};
+    int *p = arr;  // Points to first element
+    for (int i = 0; i &lt; 3; i++) {
+        printf("%d ", *(p + i));
+    }
+    return 0;
+}
+  </pre>
+
+  <h3>Advantages of Pointers</h3>
+  <ul>
+    <li>Efficient memory management and dynamic allocation.</li>
+    <li>Facilitate call by reference.</li>
+    <li>Useful in arrays, strings, and data structures like linked lists.</li>
+  </ul>
+
+  <h3>Disadvantages of Pointers</h3>
+  <ul>
+    <li>Can cause complex bugs like dangling pointers, memory leaks.</li>
+    <li>Unsafe use can lead to program crashes.</li>
+    <li>Requires careful handling to avoid errors.</li>
+  </ul>
+
+  <h2>File Handling in C</h2>
+
+  <h3>Concept of Data File</h3>
+<p>
+  A data file is a fundamental component in computer systems used to store information permanently in a non-volatile storage medium such as a hard drive, solid-state drive, or any external storage device. Unlike volatile memory like RAM, which loses its contents once the system is powered off, data files retain information indefinitely until explicitly deleted or modified. Data files serve as containers that hold data in structured or unstructured formats, including plain text, binary data, images, audio, and complex data formats like spreadsheets or databases. The primary purpose of data files is to enable programs and users to store vast amounts of information beyond the temporary memory limits, ensuring that critical data such as user preferences, application settings, logs, records, and multimedia content are available for future use. 
+</p>
+
+<h3>Need for File Handling</h3>
+<p>
+  File handling is an indispensable feature in programming that empowers applications to interact with data stored in files through various operations such as creation, reading, writing, updating, and deletion. The need for file handling arises from the fundamental requirement of preserving data beyond the lifespan of a program’s execution. When a program runs, data is usually held temporarily in memory, which is volatile and erased when the program closes or the system shuts down. File handling enables data to be stored persistently on a storage device, making it accessible across multiple program runs and system restarts. This capability is crucial for almost every software application, from simple text editors that save user documents to complex database management systems that handle millions of records. Through file handling, programs can organize data efficiently, whether sequentially (processing data in order) or randomly (accessing data at any position), depending on the application’s needs. Furthermore, file handling provides essential functionalities like error checking, data buffering, and file positioning, ensuring the accuracy and integrity of data during input/output operations. 
+</p>
+
+  <h3>Types of Files</h3>
+  <ul>
+    <li><strong>Sequential Files</strong>: Data is accessed in sequence from start to end.</li>
+    <li><strong>Random Files</strong>: Data can be accessed at any position directly.</li>
+  </ul>
+
+  <h3>File Handling Functions</h3>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Function</th>
+        <th>Purpose</th>
+        <th>Syntax</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>fopen()</td>
+        <td>Opens a file and returns a pointer to the file</td>
+        <td><code>FILE *fopen(const char *filename, const char *mode);</code></td>
+      </tr>
+      <tr>
+        <td>fclose()</td>
+        <td>Closes an opened file</td>
+        <td><code>int fclose(FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>getc()</td>
+        <td>Reads a single character from a file</td>
+        <td><code>int getc(FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>putc()</td>
+        <td>Writes a single character to a file</td>
+        <td><code>int putc(int char, FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>fprintf()</td>
+        <td>Writes formatted output to a file</td>
+        <td><code>int fprintf(FILE *stream, const char *format, ...);</code></td>
+      </tr>
+      <tr>
+        <td>fscanf()</td>
+        <td>Reads formatted input from a file</td>
+        <td><code>int fscanf(FILE *stream, const char *format, ...);</code></td>
+      </tr>
+      <tr>
+        <td>getw()</td>
+        <td>Reads a word (integer) from a file</td>
+        <td><code>int getw(FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>putw()</td>
+        <td>Writes a word (integer) to a file</td>
+        <td><code>int putw(int w, FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>fgets()</td>
+        <td>Reads a string from a file</td>
+        <td><code>char *fgets(char *str, int n, FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>fputs()</td>
+        <td>Writes a string to a file</td>
+        <td><code>int fputs(const char *str, FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>fread()</td>
+        <td>Reads binary data from a file</td>
+        <td><code>size_t fread(void *ptr, size_t size, size_t count, FILE *stream);</code></td>
+      </tr>
+      <tr>
+        <td>fwrite()</td>
+        <td>Writes binary data to a file</td>
+        <td><code>size_t fwrite(const void *ptr, size_t size, size_t count, FILE *stream);</code></td>
+      </tr>
+    </tbody>
+  </table>
 
