@@ -68,15 +68,18 @@ h3 {
   margin: 15px 20px 5px;
   color: #0059b3;
 }
+h4{
+    margin: 15px 20px 5px;
+}
 pre {
   background-color: #ffffff; 
   padding: 15px;
   margin: 20px;
   border-radius: 10px; 
   border: 1px solid #ccc;
+   display: inline-block;   
   overflow-x: auto; 
   font-family: 'Courier New', monospace;
   font-size: 14px;
 }
-
 
